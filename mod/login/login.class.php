@@ -54,7 +54,7 @@ class account extends phpSecurityClass{
 	{
 		$mysql = mysql_start();
 		
-		$sql = "SELECT id FROM users WHERE email = '$mail' AND hash = '$hash'";
+		$sql = "SELECT id FROM users WHERE email = '$mail' AND hash = '$hash' LIMIT 1";
 		$array = mysql_query($sql) or die(mysql_error());
 		$row = mysql_fetch_array($array);
 		
